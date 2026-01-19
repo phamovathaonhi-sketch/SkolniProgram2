@@ -1,4 +1,4 @@
-package Mistnost;
+package GameConcole;
 
 public class GameConsole {
     private String name;
