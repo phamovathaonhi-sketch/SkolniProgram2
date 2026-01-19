@@ -1,6 +1,8 @@
 package Mistnost;
 
-public class SeramIsland {
+import GameConcole.GameConsole;
+
+public class SeramIsland extends GameConsole {
     public void Catch(){
 
     }
