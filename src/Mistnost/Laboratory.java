@@ -1,8 +1,10 @@
 package Mistnost;
 
+import GameConcole.GameConsole;
+
 import java.io.File;
 
-public class Laboratory {
+public class Laboratory extends GameConsole {
     private String dateList[];
     private int blood;
 
