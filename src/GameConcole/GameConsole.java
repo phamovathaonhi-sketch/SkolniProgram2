@@ -10,4 +10,7 @@ public class GameConsole {
     public void End(){
 
     }
+    public void hd(){
+
+    }
 }
