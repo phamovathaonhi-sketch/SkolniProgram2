@@ -14,7 +14,5 @@ public class Bag extends Item{
     public void removeItem(Item i2){
 
     }
-    public void useItem(Item i3){
 
-    }
 }
