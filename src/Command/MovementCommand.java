@@ -7,7 +7,22 @@ public class MovementCommand {
     private String front;
 
 
-    public void goRight(){}
+    public String getRight() {
+        return right;
+    }
+
+    public String getLeft() {
+        return left;
+    }
+
+    public String getFront() {
+        return front;
+    }
+
+    public void goRight(){
+
+    }
+
     public void goLeft(){}
     public void goFront(){}
     public void teleport(){}
