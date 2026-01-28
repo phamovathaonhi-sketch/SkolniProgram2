@@ -2,6 +2,8 @@ package Mistnost;
 
 import Item.Item;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import Character.NPC;
@@ -15,7 +17,26 @@ public class Location {
     private NPC npc;
     private Enemy enemy;
 
+    public Location(String name, String theory){
+        this.name = name;
+        this.theory = theory;
+        this.items = new ArrayList<>();
+        this.itemPlacement = new HashMap<>();
+    }
 
+    public NPC getNpc() {
+        return npc;
+    }
 
+    public void setNpc(NPC npc) {
+        this.npc = npc;
+    }
 
+    public Enemy getEnemy() {
+        return enemy;
+    }
+
+    public void setEnemy(Enemy enemy) {
+        this.enemy = enemy;
+    }
 }
