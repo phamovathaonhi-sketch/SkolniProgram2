@@ -1,0 +1,62 @@
+{ "worldName": "The Secret behind a haunted painting",
+  "locations": [
+    {
+      "name": "Town",
+      "theory": "First investigation area.",
+      "NPC": [
+        {"name": "villager",
+         "dialogue": [" I saw Chai last 5 days with his new painting,which he has bought from a shaman in the next village."],
+          "dialogue": [" He has an enormous collection of delicate things from the 15s"]
+        }
+      ],
+      "items": [
+        {
+          "name": "Painting",
+          "type": "Key",
+          "inStock": true,
+        }
+      ]
+    },
+    {
+      "name": "Office",
+      "theory": "Your workplace, where you need to seek for the secret behind the painting.",
+      "requiredSteps":4,
+      "itemPlacement": { "front": "Shelf" },
+      "items": [
+        {
+          "name": "Document1",
+          "type": "Document",
+          "isEvidence": false,
+          "yinDate": [{ "day": 14, "month": 2, "year": 1890 }],
+          "description": "Ling Hua, Cause of death: Unknown"
+        },
+        {
+          "name": "Document2",
+          "type": "Document",
+          "isEvidence": false,
+          "yinDtae":[{" day": 13, "month": 3, " year": 1900}],
+          "description": "Daridra, Cause of death: Unknown"
+        },
+        {
+          "name": "Document3",
+          "type": "Document",
+          "isEvidence": true,
+          "yinDate":[{" day": 21, "month": 7, " year": 1905}],
+          "description": "Lien Hoa, Cause of death: Unknown"
+        },
+        {
+          "name": "Document4",
+          "type": "Document",
+          "isEvidence": false,
+          "yinDate": [{"day": 17,"month": 9," year": 2001}],
+          "description": " Tử Tú, Cause of death: Unknown"
+        }
+      ]
+    },
+    {
+      "name": "Seram Island",
+      "theory": " "
+    }
+  ],
+
+}
