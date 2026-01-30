@@ -86,9 +86,11 @@
      "items": [
        {
          "name": "Sample Blood no.1",
+         "hint": "Yin dates usually starts with an even number. Blood must be fresh within 72 hours.",
          "type": "implement",
-         "date":[ {"day": 12,"month": 3, "preservation time (in hours)": 3, "inStock": true },
-           {"day": 17 }
+         "date":[ {"day": 12,"month": 3, "preservation time (in hours)": 3, "useable": true },
+           {"day": 17, "month": 8, "preservation time (in hours)": 24, "useable": true},
+           {}
          ]
 
        }
