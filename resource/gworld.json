@@ -82,7 +82,7 @@
       "items": []
     },
     {"name": "Laboratory",
-     "theory": "Seeking for samples blood",
+     "theory": "Seeking for blood samples",
      "items": [
        {
          "name": "Sample Blood no.1",
@@ -90,11 +90,30 @@
          "type": "implement",
          "date":[ {"day": 12,"month": 3, "preservation time (in hours)": 3, "useable": true },
            {"day": 17, "month": 8, "preservation time (in hours)": 24, "useable": true},
-           {}
+           {"day": 29, "month": 1, "preservation time (in hours)": 12, "useable": false},
+           {"day": 16, "month": 4, "preservation time (in hours)": 70, "useable": false},
+           {"day": 17, "month": 5, "preservation time (in hours)": 84, "useable": false},
+           {"day": 18, "month": 5, "preservation time (in hours)": 13, "useable": true}
          ]
-
        }
      ]
+    },
+    {
+      "name": "Abandon Temple",
+      "theory":"A place where the ritual will be executed.",
+      "enemy": [
+        {
+          "name": "Unsettle soul",
+          "HP": 500,
+          "damage": 100,
+          "isAlvie": true,
+          "loot": {
+            "name":
+
+          }
+
+        }
+      ]
     }
   ]
 
