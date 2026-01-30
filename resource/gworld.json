@@ -100,6 +100,9 @@
     },
     {
       "name": "Abandon Temple",
+      "requiredSteps":
+      [{"steps": 10,"direction":"FRONT"},
+        {"steps": 5,"direction": "LEFT"}],
       "theory":"A place where the ritual will be executed.",
       "enemy": [
         {
@@ -108,12 +111,27 @@
           "damage": 100,
           "isAlvie": true,
           "loot": {
-            "name":
-
-          }
-
+            "name": "Settled soul",
+            "description": "Your greatest supporter in the future",
+            "inStock": true
+          },
+          "items": []
         }
       ]
+    },
+    {
+      "name": "Painting",
+      "theory": "Place where u will seek for the secret of victims death.",
+      "item": {
+        "name": "Rule List",
+        "inStock": true,
+        "theoryWin": "If you can handle those rules than you just had passed the first round of surviving.",
+        "theoryLost":"You did not follow the rules and the soul trapped you here for ever."
+      }
+
+    },
+    {
+      "name": "Forge"
     }
   ]
 
