@@ -1,4 +1,4 @@
-package Mistnost;
+package Location;
 
 import Item.Item;
 import java.util.ArrayList;
@@ -13,9 +13,13 @@ public class Location {
     private String theory;
     private List<Item> items;
     private Map<String, String> itemPlacement;
+    private Map<Directions, String> exits;
     private NPC npc;
     private Enemy enemy;
 
+    public String exitTarget(Directions directions){
+        return exits.get(directions);
+    }
     public Location(String name, String theory){
         this.name = name;
         this.theory = theory;
@@ -27,15 +31,13 @@ public class Location {
         return npc;
     }
 
-    public void setNpc(NPC npc) {
-        this.npc = npc;
-    }
 
     public Enemy getEnemy() {
         return enemy;
     }
-
-    public void setEnemy(Enemy enemy) {
-        this.enemy = enemy;
+    public void addItem(Item item){
+        items.add(item);
     }
+
+
 }

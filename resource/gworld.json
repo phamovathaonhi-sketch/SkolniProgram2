@@ -131,7 +131,36 @@
 
     },
     {
-      "name": "Forge"
+      "name": "Forge",
+      "theory": "Craft session, where you can build whatever you want.",
+      "craftingRecipe": {
+        "requiredItems": ["Železný prut", "Kožená rukojeť"],
+        "resultItem": {
+          "name": "Sword",
+          "damage": 500,
+          "description": "Sword that will help you defeat shaman."
+        }
+      },
+      "item":[]
+    },
+    {
+      "name": "Wedding",
+      "theory": "Final path",
+      "enemy": [{
+        "name": "Shaman",
+        "theory": "key",
+        "HP": 1000,
+        "damage": 450,
+        "isAlive": true
+      },
+        {
+          "name": "Rooster",
+          "theory": "Final Boss",
+          "HP": 1500,
+          "damage": 500,
+          "isAlive": true
+        }]
+
     }
   ]
 

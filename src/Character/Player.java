@@ -2,7 +2,7 @@ package Character;
 
 import Item.Bag;
 import Item.Item;
-import Mistnost.Location;
+import Location.Location;
 
 public class Player extends Character {
     private Location currentLocation;
@@ -21,5 +21,9 @@ public class Player extends Character {
     }
 
     public void attack() {
+    }
+
+    public Location getCurrentLocation() {
+        return currentLocation;
     }
 }

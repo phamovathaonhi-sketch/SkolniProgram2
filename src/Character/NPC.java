@@ -1,5 +1,5 @@
 package Character;
-import Mistnost.Location;
+import Location.Location;
 
 import java.util.HashMap;
 import java.util.List;
