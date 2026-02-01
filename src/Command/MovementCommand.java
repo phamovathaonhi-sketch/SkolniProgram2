@@ -1,16 +1,18 @@
 package Command;
 
-import Location.Location;
+
 import Character.Player;
+import Location.Directions;
+import Location.Location;
 import Location.World;
 
 public class MovementCommand implements Command{
-    private Location loc;
+    private Directions direction;
     private Player player;
     private World world;
 
-    public MovementCommand(Location loc, Player player, World world) {
-        this.loc = loc;
+    public MovementCommand(Directions direction, Player player, World world) {
+        this.direction = direction;
         this.player = player;
         this.world = world;
     }
@@ -18,7 +20,17 @@ public class MovementCommand implements Command{
     @Override
     public boolean execute() {
        Location currentLoc= player.getCurrentLocation();
-       String targetLoc=  currentLoc.getExitTarget(D);
-        return true;
+       String targetLoc=  currentLoc.getExitTarget(direction);
+
+       if (targetLoc== null){
+           System.out.println("Error");
+           return false;
+       }
+       Location next = world.findLocation(targetLoc);
+       if (next!=null){
+           player.setCurrentLocation(next);
+           return true;
+       }
+        return false;
     }
 }

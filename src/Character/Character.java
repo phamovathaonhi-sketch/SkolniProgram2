@@ -1,6 +1,6 @@
 package Character;
 
-public abstract class Character {
+public abstract class Character{
     private String name;
     private String duty;
     private int damage;
@@ -16,12 +16,37 @@ public abstract class Character {
     }
 
     public boolean isDefeated() {
-        return HP<=0;
+        if (HP<=0){
+            return true;
+        }
+        return false;
     }
 
     public void attackCh(Character target){
+        if (this.HP<0){
+            this.HP=0;
+        }
         target.HP -= this.damage;
 
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getDuty() {
+        return duty;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public int getHP() {
+        return HP;
+    }
+
+    public int getPoint() {
+        return point;
+    }
 }

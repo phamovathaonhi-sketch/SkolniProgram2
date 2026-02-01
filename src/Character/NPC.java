@@ -17,7 +17,7 @@ public class NPC extends Character {
     public void giveHint(String currentLocationName) {
         List<String> lines = dialogue.get(currentLocationName);
         if (lines != null) {
-            System.out.println(lines.get(0)); // Prints first line for this room
+            System.out.println(lines.get(0));
         }
     }
 }

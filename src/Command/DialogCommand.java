@@ -1,27 +1,27 @@
 package Command;
 
 import java.io.File;
+import Character.NPC;
+import Character.Player;
 
 public class DialogCommand implements Command {
     File dialogue1 = new File("dialogue.txt");
-    File answers = new File("answer.txt");
+    public NPC npc;
 
-    public DialogCommand(File dialogue1, File answers) {
-        this.dialogue1 = dialogue1;
-        this.answers = answers;
+
+    public DialogCommand(Player player, NPC npc) {
+        this.npc = npc;
     }
 
     //TODO: logic
     public void speak(){
     }
-    public void answer(){
 
-    }
 
     @Override
     public boolean execute() {
         speak();
-        answer();
+
         return true;
 
 

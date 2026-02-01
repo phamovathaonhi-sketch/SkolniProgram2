@@ -1,4 +1,5 @@
 { "worldName": "The Secret behind a haunted painting",
+  "startLocation": "Town",
   "locations": [
     {
       "name": "Town",

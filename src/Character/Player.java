@@ -26,4 +26,8 @@ public class Player extends Character {
     public Location getCurrentLocation() {
         return currentLocation;
     }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
 }
