@@ -11,10 +11,12 @@ public abstract class Character {
     protected transient Location currentLocation;
 
     public Character(String name) {
+
         this.name = name;
     }
 
     public boolean isDefeated() {
+
         return HP <= 0;
     }
 
