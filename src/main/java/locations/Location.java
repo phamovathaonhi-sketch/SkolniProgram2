@@ -14,19 +14,21 @@ public class Location {
     private List<Item> items;
     private Map<String, String> itemPlacement;
 
-    // Changing these to List to match JSON [ ]
+
     private List<NPC> NPC;
     private List<Enemy> enemy;
 
-    // JSON needs String keys for Map, we convert to Direction in the getter
+
     private Map<String, String> exits;
 
-    public String getName() { return name; }
-    public String getTheory() { return theory; }
+    public String getName() {
+        return name; }
+    public String getTheory() {
+        return theory; }
 
     public Enemy getEnemy() {
         if (enemy == null || enemy.isEmpty()) return null;
-        return enemy.get(0); // Returns the first enemy in the list
+        return enemy.get(0);
     }
 
     public NPC getNPC(String name) {
@@ -39,8 +41,9 @@ public class Location {
 
     public String getExitTarget(Directions direction) {
         if (exits == null) return null;
-        return exits.get(direction.name()); // Matches "FRONT", "LEFT", etc.
+        return exits.get(direction.name());
     }
 
-    public List<Item> getItems() { return items; }
+    public List<Item> getItems() {
+        return items; }
 }
