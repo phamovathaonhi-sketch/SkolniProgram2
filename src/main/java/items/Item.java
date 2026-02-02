@@ -8,4 +8,12 @@ public class Item {
         this.name = name;
         Instock = instock;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean isInstock() {
+        return Instock;
+    }
 }

@@ -46,4 +46,7 @@ public class Location {
 
     public List<Item> getItems() {
         return items; }
+    public void removeCharacter(Enemy e){
+        this.enemy.remove(e);
+    }
 }

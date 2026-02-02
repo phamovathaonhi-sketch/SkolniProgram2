@@ -10,6 +10,7 @@ public class WorldLoader {
     private World world;
     private Player player;
     private boolean isRunning;
+    private NPC npc;
 
     public WorldLoader(Player player) {
         this.world = World.loadWorld("/gworld.json");
@@ -33,7 +34,7 @@ public class WorldLoader {
             }
             case "speak" -> {
                 NPC target = player.getCurrentLocation().getNPC(param);
-                yield (target != null) ? new DialogCommand(player, target) : null;
+                yield (target != null) ? new DialogCommand(npc, target) : null;
             }
             case "quit" -> {
                 this.isRunning = false;

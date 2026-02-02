@@ -8,12 +8,19 @@ public class Player extends Character {
     private Location currentLocation;
     private Bag bag;
 
+
     public Player(String name) {
         super(name);
     }
 
     public void go(String direction) {
-        // logic to update currentLocation based on MovementCommand direction
+
+    }
+    public void receiveDamage(int damage){
+        this.HP= this.HP-damage;
+        if (this.HP==0){
+            this.HP=0;
+        }
     }
 
     public void pickupItem(Item item) {

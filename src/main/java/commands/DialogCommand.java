@@ -2,25 +2,31 @@ package commands;
 
 import java.io.File;
 import characters.NPC;
-import characters.Player;
+
 
 public class DialogCommand implements Command {
     File dialogue1 = new File("dialogue.txt");
     public NPC npc;
 
 
-    public DialogCommand(Player player, NPC npc) {
+    public DialogCommand(NPC npc1, NPC npc) {
         this.npc = npc;
     }
 
-    //TODO: logic
-    public void speak(){
+    public File getDialogue1() {
+        return dialogue1;
     }
+
 
 
     @Override
     public boolean execute() {
-        speak();
+        if (npc != null){
+            npc.speak();
+        }else{
+            System.out.println("No NPC exists.");
+        }
+
 
         return true;
 
