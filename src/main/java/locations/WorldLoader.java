@@ -2,7 +2,6 @@ package locations;
 
 import characters.Player;
 import characters.NPC;
-import characters.Enemy;
 import commands.*;
 import java.util.Scanner;
 

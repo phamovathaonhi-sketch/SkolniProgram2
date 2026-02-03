@@ -1,14 +1,13 @@
 package locations;
 
 import items.Item;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import characters.NPC;
 import characters.Enemy;
-import characters.Character;
 
 public class Location {
+
     private String name;
     private String theory;
     private List<Item> items;
@@ -27,6 +26,7 @@ public class Location {
         return theory; }
 
     public Enemy getEnemy() {
+
         if (enemy == null || enemy.isEmpty()) return null;
         return enemy.get(0);
     }

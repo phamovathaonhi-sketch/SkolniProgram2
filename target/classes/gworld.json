@@ -1,6 +1,7 @@
 {
   "worldName": "The Secret behind a haunted painting",
   "startLocation": "Town",
+  "Instroduction": "In this game you will be a detective who tries to find solution for all of the mysterious cases.",
   "locations": [
     {
       "name": "Town",

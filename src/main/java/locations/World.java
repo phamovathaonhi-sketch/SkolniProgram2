@@ -9,7 +9,7 @@ import java.util.List;
 public class World {
     public String worldName;
     public String startLocation;
-    private List<Location> locations; // Must match JSON key
+    private List<Location> locations;
 
     public static World loadWorld(String resourcePath) {
         Gson gson = new Gson();

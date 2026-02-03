@@ -25,7 +25,7 @@ public class BattleCommand  implements Command{
             player.receiveDamage(enemyPower);
             System.out.println(enemy.getName()+ "has attacked you");
         }else{
-            System.out.println("You have successfully defeat your enemy" );
+            System.out.println("You have successfully defeated your enemy" );
             player.getCurrentLocation().removeCharacter(enemy);
         }
         if (player.getHP()==0){
