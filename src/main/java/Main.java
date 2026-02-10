@@ -1,4 +1,4 @@
-package app;
+
 
 import characters.Player;
 import locations.WorldLoader;
