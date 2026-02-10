@@ -7,44 +7,45 @@ import items.Bag;
 import java.util.List;
 
 public class ChallengeCommand implements Command {
+
     private List<String> answer;
     private List<Bag> bag;
     private Player player;
     private Enemy enemy;
 
-    public ChallengeCommand(List<String> answer, List<Bag> bag) {
+    public ChallengeCommand(List<String> answer, List<Bag> bag, Player player, Enemy enemy) {
         this.answer = answer;
         this.bag = bag;
+        this.player = player;
+        this.enemy = enemy;
     }
 
-    //TODO: logic
-    public void attack() {
-        int PLayerpower = player.getDamage();
-        enemy.receiveDamage(PLayerpower);
+    private void attack() {
+        if (player == null || enemy == null) {
+            System.out.println("Challenge error: player or enemy missing.");
+            return;
+        }
 
-        if (enemy.getHP() == 0) {
-            System.out.println("Enemy is defeated.");
-        }
-        if (enemy.getHP() > 0) {
-            int enemyPower = enemy.getDamage();
-            player.receiveDamage(enemyPower);
-            System.out.println(enemy.getName() + "has attacked you");
-        } else {
-            System.out.println("You have successfully defeated your enemy");
+        int playerPower = player.getDamage();
+        enemy.receiveDamage(playerPower);
+
+        if (!enemy.isAlive()) {
+            System.out.println("Enemy defeated!");
             player.getCurrentLocation().removeCharacter(enemy);
+            return;
         }
-        if (player.getHP() == 0) {
+
+        player.receiveDamage(enemy.getDamage());
+        System.out.println(enemy.getName() + " attacked you!");
+
+        if (player.isDefeated()) {
             System.out.println("You lost.");
         }
-
-
-
     }
 
     @Override
     public boolean execute() {
         attack();
-        return false;
+        return true;
     }
 }
-

@@ -2,42 +2,21 @@ package characters;
 
 import items.Bag;
 import items.Item;
-import locations.Location;
 
 public class Player extends Character {
-    private Location currentLocation;
-    private Bag bag;
-
+    private final Bag bag = new Bag(12);
 
     public Player(String name) {
         super(name);
+        this.HP = 100;
+        this.damage = 8;
     }
 
-    public void go(String direction) {
+    public Bag getBag() { return bag; }
 
-    }
-    public void receiveDamage(int damage){
-        this.HP= this.HP-damage;
-        if (this.HP==0){
-            this.HP=0;
-        }
-    }
-
-    public void pickupItem(Item item) {
-        bag.addItem(item);
-    }
-
-    public void attack() {
-    }
-    public void useItem(Item item){
-
-    }
-
-    public Location getCurrentLocation() {
-        return currentLocation;
-    }
-
-    public void setCurrentLocation(Location currentLocation) {
-        this.currentLocation = currentLocation;
+    public int getTotalDamage() {
+        Item sword = bag.get("Sword");
+        int bonus = (sword != null && sword.damage != null) ? sword.damage : 0;
+        return this.damage + bonus;
     }
 }

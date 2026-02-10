@@ -1,6 +1,9 @@
 package locations;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -9,10 +12,14 @@ import java.util.List;
 public class World {
     public String worldName;
     public String startLocation;
-    private List<Location> locations;
+
+    @SerializedName("Instroduction")
+    public String introduction;
+
+    public List<Location> locations;
 
     public static World loadWorld(String resourcePath) {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().create();
         try (InputStream is = World.class.getResourceAsStream(resourcePath)) {
             if (is == null) throw new IllegalStateException("Resource not found: " + resourcePath);
             return gson.fromJson(new InputStreamReader(is, StandardCharsets.UTF_8), World.class);
@@ -24,7 +31,7 @@ public class World {
     public Location findLocation(String name) {
         if (name == null || locations == null) return null;
         return locations.stream()
-                .filter(l -> l.getName() != null && l.getName().equalsIgnoreCase(name.trim()))
+                .filter(l -> l != null && l.name != null && l.name.equalsIgnoreCase(name.trim()))
                 .findFirst()
                 .orElse(null);
     }

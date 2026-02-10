@@ -1,39 +1,41 @@
 package items;
 
-
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.List;
 
 public class Bag {
-    private ArrayList<Item> items;
-    private boolean full;
-    private ArrayList<Item> bag;
+    private final List<Item> items = new ArrayList<>();
+    private final int maxSize;
 
-    public Bag(ArrayList<Item> items, boolean full, ArrayList<Item> bag) {
-        this.items = items;
-        this.full = false;
-        this.bag = bag;
+    public Bag(int maxSize) {
+        this.maxSize = maxSize;
     }
 
-    public void addItem(Item i1){
-       if (bag.size() == 12){
-            full = true;
-            System.out.println(" Your bag is full, please remove at least one item to pick this element.");
-        }else {
-           bag.add(i1);
-       }
-
+    public boolean add(Item item) {
+        if (item == null) return false;
+        if (items.size() >= maxSize) return false;
+        items.add(item);
+        return true;
     }
-    public void removeItem(Item i){
-            bag.remove(i);
-        }
-    public void remove() {
-        System.out.println("Which item do you want to delete?");
-        for (Item items : bag) {
-            System.out.println(bag);
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Enter item: " );
-        }
 
+    public Item get(String name) {
+        return items.stream()
+                .filter(i -> i.name != null && i.name.equalsIgnoreCase(name))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public boolean has(String name) {
+        return get(name) != null;
+    }
+
+    public boolean remove(String name) {
+        Item it = get(name);
+        if (it == null) return false;
+        return items.remove(it);
+    }
+
+    public List<Item> all() {
+        return List.copyOf(items);
     }
 }

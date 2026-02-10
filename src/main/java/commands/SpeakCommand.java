@@ -2,15 +2,11 @@ package commands;
 
 import characters.NPC;
 
-public class DialogCommand implements Command {
+public class SpeakCommand implements Command {
     private final NPC npc;
+    public SpeakCommand(NPC npc) { this.npc = npc; }
 
-    public DialogCommand(NPC npc) {
-        this.npc = npc;
-    }
-
-    @Override
-    public boolean execute() {
+    @Override public boolean execute() {
         if (npc == null) {
             System.out.println("No such NPC here.");
             return false;

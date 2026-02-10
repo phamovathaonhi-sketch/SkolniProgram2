@@ -1,27 +1,21 @@
 package items;
 
-import characters.Player;
+import com.google.gson.annotations.SerializedName;
 
 public class Item {
-    private String name;
-    private boolean Instock;
-    private Player player;
-    private Item item;
+    public String name;
+    public String type;
 
-    public Item(String name, boolean instock) {
-        this.name = name;
-        Instock = false;
-    }
+    @SerializedName("inStock")
+    public boolean inStock = true;
 
-    public String getName() {
-        player.getCurrentLocation().getItems(item);
-        return name;
-    }
+    public String description;
+    public String hint;
 
-    public boolean isInstock() {
-       if (Instock == true ){
-           System.out.println("Item avaible.");
-       }
-        return Instock;
+    public Integer damage; // for weapons
+
+    public String pretty() {
+        String dmg = (damage != null) ? (" dmg=" + damage) : "";
+        return name + " [" + type + "]" + dmg;
     }
 }

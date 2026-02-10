@@ -1,37 +1,26 @@
 package characters;
 
-import locations.Location;
+import items.Item;
 
 public class Enemy extends Character {
-    private boolean isAlive;
-    private Enemy enemy;
-    private Player pLayer;
+    public boolean isAlive = true;
+    public Item loot; // optional
+
+    public Enemy() {
+        super("Enemy");
+    }
 
     public Enemy(String name) {
         super(name);
     }
-    public void receiveDamage(int Damage) {
-        this.HP = this.HP - damage;
-        if (this.HP < 0) {
-          this.HP =0;
-        }
-    }
-    public boolean isAlive() {
-        if (enemy.getHP() == 0){
-            return isDefeated;
-        }
-        return isAlive && !isDefeated();
-    }
-    public int attackPlayer(){
-        int Damage = enemy.getDamage();
-        return Damage;
+
+    @Override
+    public void receiveDamage(int dmg) {
+        super.receiveDamage(dmg);
+        if (HP <= 0) isAlive = false;
     }
 
-public boolean isDefeated() {
-        if (enemy.getHP() == 0){
-            System.out.println("You have successfully defeated an enemy!");
-            return true;
-        }
-        return false;
+    public boolean isAlive() {
+        return isAlive && !isDefeated();
     }
 }

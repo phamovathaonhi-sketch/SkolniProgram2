@@ -17,62 +17,42 @@
         }
       ],
       "items": [
-        {
-          "name": "Painting",
-          "type": "Key",
-          "inStock": true
-        }
-      ]
+        { "name": "Painting", "type": "Key", "inStock": true }
+      ],
+      "nextLocation": { "FRONT": "Office" }
     },
     {
       "name": "Office",
       "theory": "Your workplace, where you need to seek for the secret behind the painting.",
-      "itemPlacement": { "FRONT": "Shelf" },
-      "requiredSteps": { "steps": 4, "direction": "RIGHT" },
       "items": [
         {
           "name": "Document1",
           "type": "Document",
-          "isEvidence": false,
-          "yinDate": [{ "day": 14, "month": 2, "year": 1890 }],
-          "description": "Ling Hua, Cause of death: Unknown"
-        },
-        {
-          "name": "Document2",
-          "type": "Document",
-          "isEvidence": false,
-          "yinDate": [{ "day": 13, "month": 3, "year": 1900 }],
-          "description": "Daridra, Cause of death: Unknown"
+          "inStock": true,
+          "description": "Old case: Agus died 3 days after buying the same painting."
         },
         {
           "name": "Document3",
           "type": "Document",
-          "isEvidence": true,
-          "yinDate": [{ "day": 21, "month": 7, "year": 1905 }],
-          "description": "Lien Hoa, Cause of death: Unknown"
-        },
-        {
-          "name": "Document4",
-          "type": "Document",
-          "isEvidence": false,
-          "yinDate": [{ "day": 17, "month": 9, "year": 2001 }],
-          "description": " Tử Tú, Cause of death: Unknown"
+          "inStock": true,
+          "description": "Evidence: ritual requires blood samples from pure-yin births."
         }
-      ]
+      ],
+      "nextLocation": { "FRONT": "Seram Island" }
     },
     {
       "name": "Seram Island",
       "theory": "An island filled with cannibals.",
-      "requiredSteps": { "steps": 5, "direction": "LEFT" },
       "enemy": [
         {
           "name": "rooster",
           "HP": 30,
           "damage": 3,
+          "isAlive": true,
           "loot": {
-            "name": "roots blood",
+            "name": "Rooster Blood",
             "type": "implements",
-            "description": "important element to complete ritual",
+            "description": "Important element to complete ritual.",
             "inStock": true
           }
         }
@@ -82,97 +62,78 @@
           "name": "Cinnabar",
           "type": "implements",
           "inStock": true,
-          "itemPlacement": { "UNDER": "Coconut Tree" },
-          "requiredSteps": [
-            { "steps": 2, "direction": "LEFT" },
-            { "steps": 5, "direction": "RIGHT" }
-          ]
+          "description": "Material for ritual and forging."
         }
-      ]
+      ],
+      "nextLocation": { "FRONT": "Laboratory" }
     },
     {
       "name": "Laboratory",
-      "theory": "Seeking for blood samples",
+      "theory": "Seeking for blood samples (simplified).",
       "items": [
         {
-          "name": "Sample Blood no.1",
-          "hint": "Yin dates usually starts with an even number. Blood must be fresh within 72 hours.",
+          "name": "Pure Yin Blood Sample",
           "type": "implement",
-          "date": [
-            { "day": 12, "month": 3, "preservation time (in hours)": 3, "useable": true },
-            { "day": 17, "month": 8, "preservation time (in hours)": 24, "useable": true },
-            { "day": 29, "month": 1, "preservation time (in hours)": 12, "useable": false },
-            { "day": 16, "month": 4, "preservation time (in hours)": 70, "useable": false },
-            { "day": 17, "month": 5, "preservation time (in hours)": 84, "useable": false },
-            { "day": 18, "month": 5, "preservation time (in hours)": 13, "useable": true }
-          ]
+          "inStock": true,
+          "hint": "Blood must be fresh. Choose usable samples."
         }
-      ]
+      ],
+      "nextLocation": { "FRONT": "Abandon Temple" }
     },
     {
       "name": "Abandon Temple",
-      "requiredSteps": [
-        { "steps": 10, "direction": "FRONT" },
-        { "steps": 5, "direction": "LEFT" }
-      ],
       "theory": "A place where the ritual will be executed.",
       "enemy": [
         {
           "name": "Unsettle soul",
-          "HP": 500,
-          "damage": 100,
+          "HP": 60,
+          "damage": 7,
           "isAlive": true,
           "loot": {
             "name": "Settled soul",
-            "description": "Your greatest supporter in the future",
+            "type": "Key",
+            "description": "Your greatest supporter in the future.",
             "inStock": true
           }
         }
-      ]
+      ],
+      "nextLocation": { "FRONT": "Painting Room" }
     },
     {
       "name": "Painting Room",
-      "theory": "Place where u will seek for the secret of victims death.",
+      "theory": "Place where you seek the secret of victim's death.",
       "items": [
         {
           "name": "Rule List",
+          "type": "Document",
           "inStock": true,
-          "theoryWin": "If you can handle those rules then you just passed the first round of surviving.",
-          "theoryLost": "You did not follow the rules and the soul trapped you here forever."
+          "description": "Rules to survive 3 days in the painting (simplified)."
         }
-      ]
+      ],
+      "nextLocation": { "FRONT": "Forge" }
     },
     {
       "name": "Forge",
-      "theory": "Craft session, where you can build whatever you want.",
+      "theory": "Craft session. You must craft a special sword.",
       "craftingRecipe": {
-        "requiredItems": [ "Iron Rod", "Leather Handle" ],
+        "requiredItems": ["Cinnabar", "Rooster Blood"],
         "resultItem": {
           "name": "Sword",
-          "damage": 500,
-          "description": "Sword that will help you defeat shaman."
+          "type": "Weapon",
+          "damage": 25,
+          "description": "Sword that will help you defeat shaman.",
+          "inStock": true
         }
       },
-      "items": []
+      "items": [],
+      "nextLocation": { "FRONT": "Wedding" }
     },
     {
       "name": "Wedding",
-      "theory": "Final path",
+      "theory": "Final path. Defeat Shaman and then kill the Rooster.",
       "enemy": [
-        {
-          "name": "Shaman",
-          "theory": "key",
-          "HP": 1000,
-          "damage": 450,
-          "isAlive": true
-        },
-        {
-          "name": "Rooster",
-          "theory": "Final Boss",
-          "HP": 1500,
-          "damage": 500,
-          "isAlive": true
-        }
+        { "name": "Shaman", "HP": 80, "damage": 10, "isAlive": true },
+        { "name": "Rooster", "HP": 90, "damage": 12, "isAlive": true }
       ]
     }
   ]

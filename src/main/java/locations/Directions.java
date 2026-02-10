@@ -1,6 +1,5 @@
 package locations;
 
 public enum Directions {
-    RIGHT, LEFT, FRONT;
-
+    FRONT, LEFT, RIGHT
 }

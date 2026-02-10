@@ -1,52 +1,65 @@
 package locations;
 
+import characters.Enemy;
+import characters.NPC;
 import items.Item;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import characters.NPC;
-import characters.Enemy;
 
 public class Location {
+    public String name;
+    public String theory;
 
-    private String name;
-    private String theory;
-    private List<Item> items;
-    private Map<String, String> itemPlacement;
+    public List<Item> items = new ArrayList<>();
+    public List<NPC> NPC = new ArrayList<>();
+    public List<Enemy> enemy = new ArrayList<>();
 
+    public Map<String, String> nextLocation;
 
-    private List<NPC> NPC;
-    private List<Enemy> enemy;
+    public Recipe craftingRecipe;
 
+    public String getName() { return name; }
 
-    private Map<String, String> nextLocation;
-
-    public String getName() {
-        return name; }
-    public String getTheory() {
-        return theory; }
-
-    public Enemy getEnemy() {
-
-        if (enemy == null || enemy.isEmpty()) return null;
-        return enemy.get(0);
-    }
-
-    public NPC getNPC(String name) {
-        if (NPC == null) return null;
+    public NPC getNPC(String npcName) {
+        if (NPC == null || npcName == null) return null;
         for (NPC n : NPC) {
-            if (n.getName().equalsIgnoreCase(name)) return n;
+            if (n != null && n.getName() != null && n.getName().equalsIgnoreCase(npcName)) return n;
         }
         return null;
     }
 
-    public String getNextDIrection(Directions direction) {
-        if (nextLocation== null) return null;
-        return nextLocation.get(direction.name());
+    public Enemy getFirstAliveEnemy() {
+        if (enemy == null) return null;
+        for (Enemy e : enemy) {
+            if (e != null && e.isAlive()) return e;
+        }
+        return null;
     }
 
-    public List<Item> getItems(Item item) {
-        return items; }
-    public void removeCharacter(Enemy e){
-        this.enemy.remove(e);
+    public void removeCharacter(Enemy e) {
+        if (enemy == null || e == null) return;
+        enemy.remove(e);
+    }
+
+    public Item findItem(String itemName) {
+        if (items == null || itemName == null) return null;
+        for (Item it : items) {
+            if (it != null && it.inStock && it.name != null && it.name.equalsIgnoreCase(itemName)) return it;
+        }
+        return null;
+    }
+
+    public boolean takeItem(String itemName) {
+        Item it = findItem(itemName);
+        if (it == null) return false;
+        it.inStock = false;
+        return true;
+    }
+
+    public String getNext(Directions dir) {
+        if (nextLocation == null || dir == null) return null;
+        return nextLocation.get(dir.name());
     }
 }
