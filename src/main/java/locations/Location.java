@@ -18,7 +18,7 @@ public class Location {
     private List<Enemy> enemy;
 
 
-    private Map<String, String> exits;
+    private Map<String, String> nextLocation;
 
     public String getName() {
         return name; }
@@ -39,12 +39,12 @@ public class Location {
         return null;
     }
 
-    public String getExitTarget(Directions direction) {
-        if (exits == null) return null;
-        return exits.get(direction.name());
+    public String getNextDIrection(Directions direction) {
+        if (nextLocation== null) return null;
+        return nextLocation.get(direction.name());
     }
 
-    public List<Item> getItems() {
+    public List<Item> getItems(Item item) {
         return items; }
     public void removeCharacter(Enemy e){
         this.enemy.remove(e);

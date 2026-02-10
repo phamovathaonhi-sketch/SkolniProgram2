@@ -29,6 +29,9 @@ public class Player extends Character {
 
     public void attack() {
     }
+    public void useItem(Item item){
+
+    }
 
     public Location getCurrentLocation() {
         return currentLocation;

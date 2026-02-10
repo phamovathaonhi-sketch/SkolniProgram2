@@ -9,7 +9,7 @@ public class DialogCommand implements Command {
     public NPC npc;
 
 
-    public DialogCommand(NPC npc1, NPC npc) {
+    public DialogCommand(NPC npc) {
         this.npc = npc;
     }
 

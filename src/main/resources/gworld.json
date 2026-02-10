@@ -12,7 +12,8 @@
           "dialogue": [
             "I saw Chai last 5 days with his new painting, which he has bought from a shaman in the next village.",
             "He has an enormous collection of delicate things from the 15s"
-          ]
+          ],
+          "met": true
         }
       ],
       "items": [

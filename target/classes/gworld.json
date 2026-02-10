@@ -160,10 +160,11 @@
       "enemy": [
         {
           "name": "Shaman",
-          "theory": "key",
+          "duty": "key",
           "HP": 1000,
           "damage": 450,
-          "isAlive": true
+          "isAlive": true,
+          "point": 1000
         },
         {
           "name": "Rooster",

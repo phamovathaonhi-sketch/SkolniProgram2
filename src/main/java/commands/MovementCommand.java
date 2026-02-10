@@ -20,7 +20,7 @@ public class MovementCommand implements Command{
     @Override
     public boolean execute() {
        Location currentLoc= player.getCurrentLocation();
-       String targetLoc=  currentLoc.getExitTarget(direction);
+       String targetLoc=  currentLoc.getNextDIrection(direction);
 
        if (targetLoc== null){
            System.out.println("Error");

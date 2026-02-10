@@ -9,15 +9,17 @@ public abstract class Character {
     protected int HP;
     protected int point;
     protected transient Location currentLocation;
+    public boolean isDefeated;
+
 
     public Character(String name) {
-
         this.name = name;
-    }
-
-    public boolean isDefeated() {
-
-        return HP <= 0;
+        this.duty = duty;
+        this.damage = damage;
+        this.HP = HP;
+        this.point = point;
+        this.currentLocation = currentLocation;
+        this.isDefeated = false;
     }
 
     public void attackCh(Character target) {
@@ -26,8 +28,17 @@ public abstract class Character {
             System.out.println(this.name + " deals " + this.damage + " damage to " + target.getName());
         }
     }
+    public boolean isDefeated (){
+        if (HP==0){
+            return true;
+        }
+        return false;
+    }
 
-    public String getName() { return name; }
-    public int getHP() { return HP; }
-    public int getDamage() { return damage; }
+    public String getName() {
+        return name; }
+    public int getHP() {
+        return HP; }
+    public int getDamage() {
+        return damage; }
 }

@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class WorldLoader {
     private World world;
     private Player player;
-    private boolean isRunning;
+    private boolean isRunning = true;
     private NPC npc;
 
     public WorldLoader(Player player) {
@@ -33,7 +33,7 @@ public class WorldLoader {
             }
             case "speak" -> {
                 NPC target = player.getCurrentLocation().getNPC(param);
-                yield (target != null) ? new DialogCommand(npc, target) : null;
+                yield (target != null) ? new DialogCommand(npc) : null;
             }
             case "quit" -> {
                 this.isRunning = false;
