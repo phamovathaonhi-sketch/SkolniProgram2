@@ -39,4 +39,9 @@ public class GoCommand implements Command {
         System.out.println("You travel to: " + next.getName());
         return true;
     }
+
+    @Override
+    public int timeCostHours() {
+        return 0;
+    }
 }

@@ -15,23 +15,33 @@ public class TakeCommand implements Command {
         this.itemName = itemName;
     }
 
-    @Override
-    public boolean execute() {
+    @Override public boolean execute() {
         if (itemName == null || itemName.isBlank()) {
             System.out.println("Usage: take <item>");
             return false;
         }
+
         Item it = location.findItem(itemName);
         if (it == null) {
             System.out.println("Item not found here: " + itemName);
             return false;
         }
+
+        // blood freshness rule (design: ≤24h)
+        if ("BloodSample".equalsIgnoreCase(it.type) && !it.isFreshBlood()) {
+            System.out.println("This blood sample is too old (>24h). You cannot take it.");
+            return false;
+        }
+
         if (!player.getBag().add(it)) {
             System.out.println("Bag is full.");
             return false;
         }
+
         location.takeItem(itemName);
         System.out.println("Picked up: " + it.pretty());
         return true;
     }
+
+    @Override public int timeCostHours() { return 1; }
 }

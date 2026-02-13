@@ -5,8 +5,7 @@ import locations.WorldLoader;
 
 public class Main {
     public static void main(String[] args) {
-        Player player = new Player("Detective Alaric");
-        WorldLoader loader = new WorldLoader(player);
-        loader.start();
+        Player player = new Player("Detektiv Alaric");
+        new WorldLoader(player).start();
     }
 }

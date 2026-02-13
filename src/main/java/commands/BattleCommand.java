@@ -44,4 +44,9 @@ public class BattleCommand  implements Command{
         use();
         return true;
     }
+
+    @Override
+    public int timeCostHours() {
+        return 0;
+    }
 }

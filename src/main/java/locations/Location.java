@@ -20,6 +20,12 @@ public class Location {
 
     public Recipe craftingRecipe;
 
+    // simple requirement system
+    public List<String> requirements;
+
+    // optional rules (we keep them in JSON for story, logic is in RuleEngine)
+    public List<Map<String, Object>> rules;
+
     public String getName() { return name; }
 
     public NPC getNPC(String npcName) {

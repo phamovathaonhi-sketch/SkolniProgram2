@@ -18,15 +18,13 @@ public class Bag {
         return true;
     }
 
+    public boolean has(String name) { return get(name) != null; }
+
     public Item get(String name) {
         return items.stream()
                 .filter(i -> i.name != null && i.name.equalsIgnoreCase(name))
                 .findFirst()
                 .orElse(null);
-    }
-
-    public boolean has(String name) {
-        return get(name) != null;
     }
 
     public boolean remove(String name) {
@@ -35,7 +33,5 @@ public class Bag {
         return items.remove(it);
     }
 
-    public List<Item> all() {
-        return List.copyOf(items);
-    }
+    public List<Item> all() { return List.copyOf(items); }
 }

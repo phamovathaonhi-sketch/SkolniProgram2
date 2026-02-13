@@ -12,20 +12,12 @@ public class NPC extends Character {
         this.damage = 0;
     }
 
-    public NPC(String name) {
-        super(name);
-        this.HP = 1;
-        this.damage = 0;
-    }
-
     public void speak() {
         if (dialogue == null || dialogue.isEmpty()) {
             System.out.println(name + ": ...");
             return;
         }
-        for (String line : dialogue) {
-            System.out.println(name + ": " + line);
-        }
+        for (String line : dialogue) System.out.println(name + ": " + line);
         met = true;
     }
 }

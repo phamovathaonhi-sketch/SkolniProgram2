@@ -4,15 +4,11 @@ import items.Item;
 
 public class Enemy extends Character {
     public boolean isAlive = true;
-    public Item loot; // optional
+    public Item loot;
 
-    public Enemy() {
-        super("Enemy");
-    }
+    public Enemy() { super("Enemy"); }
 
-    public Enemy(String name) {
-        super(name);
-    }
+    public Enemy(String name) { super(name); }
 
     @Override
     public void receiveDamage(int dmg) {
@@ -20,7 +16,5 @@ public class Enemy extends Character {
         if (HP <= 0) isAlive = false;
     }
 
-    public boolean isAlive() {
-        return isAlive && !isDefeated();
-    }
+    public boolean isAlive() { return isAlive && !isDefeated(); }
 }

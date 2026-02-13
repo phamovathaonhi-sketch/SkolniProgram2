@@ -4,13 +4,9 @@ import characters.NPC;
 
 public class DialogCommand implements Command {
     private final NPC npc;
+    public DialogCommand(NPC npc) { this.npc = npc; }
 
-    public DialogCommand(NPC npc) {
-        this.npc = npc;
-    }
-
-    @Override
-    public boolean execute() {
+    @Override public boolean execute() {
         if (npc == null) {
             System.out.println("No such NPC here.");
             return false;
@@ -18,4 +14,6 @@ public class DialogCommand implements Command {
         npc.speak();
         return true;
     }
+
+    @Override public int timeCostHours() { return 0; }
 }

@@ -4,13 +4,9 @@ import characters.Player;
 
 public class BagCommand implements Command {
     private final Player player;
+    public BagCommand(Player player) { this.player = player; }
 
-    public BagCommand(Player player) {
-        this.player = player;
-    }
-
-    @Override
-    public boolean execute() {
+    @Override public boolean execute() {
         var items = player.getBag().all();
         if (items.isEmpty()) {
             System.out.println("(bag is empty)");
@@ -22,4 +18,6 @@ public class BagCommand implements Command {
         }
         return true;
     }
+
+    @Override public int timeCostHours() { return 0; }
 }

@@ -14,4 +14,9 @@ public class SpeakCommand implements Command {
         npc.speak();
         return true;
     }
+
+    @Override
+    public int timeCostHours() {
+        return 0;
+    }
 }

@@ -13,8 +13,7 @@ public class CraftCommand implements Command {
         this.location = location;
     }
 
-    @Override
-    public boolean execute() {
+    @Override public boolean execute() {
         if (location.craftingRecipe == null) {
             System.out.println("Nothing to craft here.");
             return false;
@@ -45,4 +44,6 @@ public class CraftCommand implements Command {
         System.out.println("Crafted: " + result.pretty());
         return true;
     }
+
+    @Override public int timeCostHours() { return 2; }
 }

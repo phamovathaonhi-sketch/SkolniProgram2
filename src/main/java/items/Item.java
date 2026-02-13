@@ -10,12 +10,20 @@ public class Item {
     public boolean inStock = true;
 
     public String description;
-    public String hint;
+    public Integer damage;
 
-    public Integer damage; // for weapons
+    // for blood samples
+    public Integer ageHours;
+
+    public boolean isFreshBlood() {
+        if (!"BloodSample".equalsIgnoreCase(type)) return true;
+        if (ageHours == null) return true;
+        return ageHours <= 24;
+    }
 
     public String pretty() {
         String dmg = (damage != null) ? (" dmg=" + damage) : "";
-        return name + " [" + type + "]" + dmg;
+        String age = (ageHours != null) ? (" ageHours=" + ageHours) : "";
+        return name + " [" + type + "]" + dmg + age;
     }
 }

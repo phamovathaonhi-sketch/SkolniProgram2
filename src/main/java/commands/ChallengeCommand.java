@@ -48,4 +48,9 @@ public class ChallengeCommand implements Command {
         attack();
         return true;
     }
+
+    @Override
+    public int timeCostHours() {
+        return 0;
+    }
 }

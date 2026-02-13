@@ -1,6 +1,8 @@
 package commands;
 
 import characters.Player;
+import game.GameState;
+import game.Requirements;
 import locations.Directions;
 import locations.Location;
 import locations.World;
@@ -9,15 +11,16 @@ public class MovementCommand implements Command {
     private final Directions dir;
     private final Player player;
     private final World world;
+    private final GameState state;
 
-    public MovementCommand(Directions dir, Player player, World world) {
+    public MovementCommand(Directions dir, Player player, World world, GameState state) {
         this.dir = dir;
         this.player = player;
         this.world = world;
+        this.state = state;
     }
 
-    @Override
-    public boolean execute() {
+    @Override public boolean execute() {
         Location current = player.getCurrentLocation();
 
         if (current.getFirstAliveEnemy() != null) {
@@ -37,8 +40,16 @@ public class MovementCommand implements Command {
             return false;
         }
 
+        if (!Requirements.checkAll(next.requirements, player, state)) {
+            String failed = Requirements.firstFailed(next.requirements, player, state);
+            System.out.println("Blocked. Requirement missing: " + failed);
+            return false;
+        }
+
         player.setCurrentLocation(next);
         System.out.println("You travel to: " + next.getName());
         return true;
     }
+
+    @Override public int timeCostHours() { return 1; }
 }
