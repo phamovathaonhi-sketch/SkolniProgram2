@@ -4,7 +4,9 @@ import game.GameState;
 
 public class RestCommand implements Command {
     private final GameState state;
-    public RestCommand(GameState state) { this.state = state; }
+    public RestCommand(GameState state) {
+        this.state = state;
+    }
 
     @Override public boolean execute() {
         if (!state.isInPainting()) {
@@ -16,5 +18,7 @@ public class RestCommand implements Command {
         return true;
     }
 
-    @Override public int timeCostHours() { return 2; }
+    @Override public int timeCostHours() {
+        return 2;
+    }
 }

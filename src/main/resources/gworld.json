@@ -1,34 +1,41 @@
 {
-  "worldName": "Tajemství prokletého obrazu",
+  "worldName": "The secret behind a haunted painting",
   "startLocation": "Town",
-  "Instroduction": "Hraješ za detektiva Alarica. Vyřeš smrt Chai a zastav svatbu v prokleté malbě.",
+  "Instroduction": "You are now detective ALaric, who's meant to solve the truth behind Chais death.",
   "locations": [
     {
       "name": "Town",
-      "theory": "Vesnice v jihovýchodní Asii. Lidé mluví o Chai a jeho nové malbě.",
+      "theory": "The town is in Southest Asia, where people talk about Chais death.",
       "NPC": [
         {
           "name": "villager",
           "dialogue": [
-            "Chai si koupil divný obraz od šamana. Zemřel za tři dny.",
-            "Jeho dům je tady poblíž. Možná tam najdeš něco důležitého."
+            "Chai have bought a diabolical painting from a shaman, then he died 3 days later. ",
+            "His house is nearby, maybe you can find something that could help you."
           ],
           "met": true
         }
       ],
       "items": [],
-      "nextLocation": { "FRONT": "Chai House" }
+      "nextLocation": {
+        "FRONT": "Chai House"
+      }
     },
-
     {
       "name": "Chai House",
-      "theory": "Dům oběti. Všude staré předměty. Na zdi visí obraz tajemné svatby.",
+      "theory": "Mysterious house, full of aged items.",
       "items": [
-        { "name": "Painting", "type": "Key", "inStock": true, "description": "Brána do malby." }
+        {
+          "name": "Painting",
+          "type": "Key",
+          "inStock": true,
+          "description": " Paintings gate guide ."
+        }
       ],
-      "nextLocation": { "FRONT": "Office" }
+      "nextLocation": {
+        "FRONT": "Office"
+      }
     },
-
     {
       "name": "Office",
       "theory": "Kancelář vyšetřovacího oddělení. Tady najdeš staré dokumenty o podobném případu.",
@@ -46,10 +53,13 @@
           "description": "Rituál vyžaduje 3 kapky krve od 3 lidí narozených s čistým jinem."
         }
       ],
-      "requirements": ["HAS:Painting"],
-      "nextLocation": { "FRONT": "Seram Island" }
+      "requirements": [
+        "HAS:Painting"
+      ],
+      "nextLocation": {
+        "FRONT": "Seram Island"
+      }
     },
-
     {
       "name": "Seram Island",
       "theory": "Ostrov Seram. Musíš získat rumělku a kohoutí krev do rituálu.",
@@ -59,38 +69,79 @@
           "HP": 30,
           "damage": 3,
           "isAlive": true,
-          "loot": { "name": "Rooster Blood", "type": "implements", "description": "Kohoutí krev.", "inStock": true }
+          "loot": {
+            "name": "Rooster Blood",
+            "type": "implements",
+            "description": "Kohoutí krev.",
+            "inStock": true
+          }
         }
       ],
       "items": [
-        { "name": "Cinnabar", "type": "implements", "inStock": true, "description": "Rumělka pro rituál i meč." }
+        {
+          "name": "Cinnabar",
+          "type": "implements",
+          "inStock": true,
+          "description": "Rumělka pro rituál i meč."
+        }
       ],
-      "requirements": ["HAS:Ritual Notes"],
-      "nextLocation": { "FRONT": "Laboratory" }
+      "requirements": [
+        "HAS:Ritual Notes"
+      ],
+      "nextLocation": {
+        "FRONT": "Laboratory"
+      }
     },
-
     {
       "name": "Laboratory",
       "theory": "Laboratoř. Krev musí být čerstvá (≤ 24h). Potřebuješ 3 různé vzorky.",
       "items": [
-        { "name": "Pure Yin Blood A", "type": "BloodSample", "inStock": true, "ageHours": 8,  "description": "Vzorek A (čerstvý)." },
-        { "name": "Pure Yin Blood B", "type": "BloodSample", "inStock": true, "ageHours": 20, "description": "Vzorek B (čerstvý)." },
-        { "name": "Pure Yin Blood C", "type": "BloodSample", "inStock": true, "ageHours": 26, "description": "Vzorek C (moc starý!)." },
-        { "name": "Pure Yin Blood C (fresh)", "type": "BloodSample", "inStock": true, "ageHours": 6, "description": "Vzorek C (čerstvý)." }
+        {
+          "name": "Pure Yin Blood A",
+          "type": "BloodSample",
+          "inStock": true,
+          "ageHours": 8,
+          "description": "Vzorek A (čerstvý)."
+        },
+        {
+          "name": "Pure Yin Blood B",
+          "type": "BloodSample",
+          "inStock": true,
+          "ageHours": 20,
+          "description": "Vzorek B (čerstvý)."
+        },
+        {
+          "name": "Pure Yin Blood C",
+          "type": "BloodSample",
+          "inStock": true,
+          "ageHours": 26,
+          "description": "Vzorek C (moc starý!)."
+        },
+        {
+          "name": "Pure Yin Blood C (fresh)",
+          "type": "BloodSample",
+          "inStock": true,
+          "ageHours": 6,
+          "description": "Vzorek C (čerstvý)."
+        }
       ],
-      "requirements": ["HAS:Cinnabar", "HAS:Rooster Blood"],
-      "nextLocation": { "FRONT": "Abandon Temple" }
+      "requirements": [
+        "HAS:Cinnabar",
+        "HAS:Rooster Blood"
+      ],
+      "nextLocation": {
+        "FRONT": "Abandon Temple"
+      }
     },
-
     {
       "name": "Abandon Temple",
-      "theory": "Opuštěný chrám. Tady proběhne rituál. Nejprve musíš zkrotit neklidnou duši.",
+      "theory": "Abandon temple. The ritual will be accomplish here. Therefore you need to take care of a haunted soul",
       "NPC": [
         {
           "name": "adam",
           "dialogue": [
-            "Jsem Adam. Budu hlídat obětní formaci, zatímco provedeš rituál.",
-            "Až budeš mít rumělku + kohoutí krev + 3 čerstvé vzorky, napiš: ritual"
+            "I am Adam, I am meant to search for useful information during that you will start the ritual.",
+            "Till you got all you need enter (ritual)."
           ],
           "met": true
         }
@@ -101,13 +152,23 @@
           "HP": 60,
           "damage": 7,
           "isAlive": true,
-          "loot": { "name": "Soul Trap", "type": "Key", "description": "Lapač duší (zjednodušeně jako klíč).", "inStock": true }
+          "loot": {
+            "name": "Soul Trap",
+            "type": "Key",
+            "description": "Soul catcher.",
+            "inStock": true
+          }
         }
       ],
-      "requirements": ["HAS:Pure Yin Blood A", "HAS:Pure Yin Blood B", "HAS:Pure Yin Blood C (fresh)"],
-      "nextLocation": { "FRONT": "Painting Room" }
+      "requirements": [
+        "HAS:Pure Yin Blood A",
+        "HAS:Pure Yin Blood B",
+        "HAS:Pure Yin Blood C (fresh)"
+      ],
+      "nextLocation": {
+        "FRONT": "Painting Room"
+      }
     },
-
     {
       "name": "Painting Room",
       "theory": "Jsi uvnitř malby. Musíš přežít 3 dny a dodržovat pravidla.",
@@ -116,35 +177,72 @@
           "name": "Rule List",
           "type": "Rules",
           "inStock": true,
-          "description": "Pravidlo: každý den musíš odpočívat (rest), jinak -15 bodů."
+          "description": "Rule: You need to use command (rest) every day. Otherwise -15 points."
         },
-        { "name": "Copper", "type": "implements", "inStock": true, "description": "Měď do kovárny." }
+        {
+          "name": "Copper",
+          "type": "implements",
+          "inStock": true,
+          "description": "Copper for forge."
+        }
       ],
       "rules": [
-        { "id": "REST_DAILY", "type": "REST_DAILY", "penaltyPoints": 15, "text": "Každý den musíš použít příkaz rest." }
+        {
+          "id": "REST_DAILY",
+          "type": "REST_DAILY",
+          "penaltyPoints": 15,
+          "text": "You need to use command REST every single day."
+        }
       ],
-      "nextLocation": { "FRONT": "Forge" }
+      "nextLocation": {
+        "FRONT": "Forge"
+      }
     },
-
     {
       "name": "Forge",
-      "theory": "Kovárna. Vykovej meč: rumělka + kohoutí krev + měď.",
+      "theory": "Forge. Craft a sword: cinnabar + roosters blood + bronze.",
       "craftingRecipe": {
-        "requiredItems": ["Cinnabar", "Rooster Blood", "Copper"],
-        "resultItem": { "name": "Sword", "type": "Weapon", "damage": 25, "description": "Meč proti šamanovi.", "inStock": true }
+        "requiredItems": [
+          "Cinnabar",
+          "Rooster Blood",
+          "Copper"
+        ],
+        "resultItem": {
+          "name": "Sword",
+          "type": "Weapon",
+          "damage": 25,
+          "description": "Magical sword",
+          "inStock": true
+        }
       },
-      "requirements": ["FLAG:IN_PAINTING"],
-      "nextLocation": { "FRONT": "Wedding" }
+      "requirements": [
+        "FLAG:IN_PAINTING"
+      ],
+      "nextLocation": {
+        "FRONT": "Wedding"
+      }
     },
-
     {
       "name": "Wedding",
-      "theory": "Svatba. Nejprve poraz šamana. Kohouta smíš zabít jen 19:00–23:00.",
+      "theory": "Wedding. First of all you need to kill shaman, then kill the rooster between 19:00-21:00",
       "enemy": [
-        { "name": "Shaman", "HP": 80, "damage": 10, "isAlive": true },
-        { "name": "Rooster", "HP": 90, "damage": 12, "isAlive": true }
+        {
+          "name": "Shaman",
+          "HP": 80,
+          "damage": 10,
+          "isAlive": true
+        },
+        {
+          "name": "Rooster",
+          "HP": 90,
+          "damage": 12,
+          "isAlive": true
+        }
       ],
-      "requirements": ["HAS:Sword", "FLAG:IN_PAINTING"]
+      "requirements": [
+        "HAS:Sword",
+        "FLAG:IN_PAINTING"
+      ]
     }
   ]
 }

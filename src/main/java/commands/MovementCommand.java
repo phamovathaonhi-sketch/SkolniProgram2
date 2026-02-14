@@ -51,5 +51,7 @@ public class MovementCommand implements Command {
         return true;
     }
 
-    @Override public int timeCostHours() { return 1; }
+    @Override public int timeCostHours() {
+        return 1;
+    }
 }

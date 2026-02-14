@@ -59,5 +59,7 @@ public class RitualCommand implements Command {
         return true;
     }
 
-    @Override public int timeCostHours() { return 2; }
+    @Override public int timeCostHours() {
+        return 2;
+    }
 }

@@ -15,5 +15,7 @@ public class TimeCommand implements Command {
         return true;
     }
 
-    @Override public int timeCostHours() { return 0; }
+    @Override public int timeCostHours() {
+        return 0;
+    }
 }

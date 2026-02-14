@@ -24,7 +24,7 @@ public class AttackCommand implements Command {
             return false;
         }
 
-        // Wedding time rule: rooster kill only 19:00–23:00
+
         if ("Wedding".equalsIgnoreCase(location.name) && "Rooster".equalsIgnoreCase(enemy.getName())) {
             if (!state.isInPainting()) {
                 System.out.println("You are not in the painting timeline. (ritual required)");
@@ -53,11 +53,11 @@ public class AttackCommand implements Command {
 
             location.removeCharacter(enemy);
 
-            // WIN condition: Wedding cleared (both defeated)
+
             if ("Wedding".equalsIgnoreCase(location.name) && location.getFirstAliveEnemy() == null) {
                 System.out.println("You stopped the wedding. The painting becomes empty.");
                 System.out.println("YOU WIN!");
-                throw new RuleEngine.GameOver("END"); // stop game loop cleanly
+                throw new RuleEngine.GameOver("END");
             }
 
             return true;
@@ -70,5 +70,7 @@ public class AttackCommand implements Command {
         return true;
     }
 
-    @Override public int timeCostHours() { return 1; }
+    @Override public int timeCostHours() {
+        return 1;
+    }
 }
