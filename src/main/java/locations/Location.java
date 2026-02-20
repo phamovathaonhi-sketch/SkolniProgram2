@@ -37,9 +37,11 @@ public class Location {
     }
 
     public Enemy getFirstAliveEnemy() {
-        if (enemy == null) return null;
+        if (enemy == null)
+            return null;
         for (Enemy e : enemy) {
-            if (e != null && e.isAlive()) return e;
+            if (e != null && e.isAlive())
+                return e;
         }
         return null;
     }
@@ -50,7 +52,8 @@ public class Location {
     }
 
     public Item findItem(String itemName) {
-        if (items == null || itemName == null) return null;
+        if (items == null || itemName == null)
+            return null;
         for (Item it : items) {
             if (it != null && it.inStock && it.name != null && it.name.equalsIgnoreCase(itemName)) return it;
         }

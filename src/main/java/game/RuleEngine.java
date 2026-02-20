@@ -31,6 +31,8 @@ public class RuleEngine {
     }
 
     public static class GameOver extends RuntimeException {
-        public GameOver(String msg) { super(msg); }
+        public GameOver(String msg) {
+            super(msg);
+        }
     }
 }

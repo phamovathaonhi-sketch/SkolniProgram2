@@ -18,6 +18,11 @@ public class World {
 
     public List<Location> locations;
 
+    /**
+     * World loader. Load from json
+     * @param resourcePath
+     * @return
+     */
     public static World loadWorld(String resourcePath) {
         Gson gson = new GsonBuilder().create();
         try (InputStream is = World.class.getResourceAsStream(resourcePath)) {

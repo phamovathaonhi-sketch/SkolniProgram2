@@ -15,11 +15,14 @@ public abstract class Character {
     }
 
     public String getName() {
-        return name; }
+        return name;
+    }
     public int getHP() {
-        return HP; }
+        return HP;
+    }
     public int getDamage() {
-        return damage; }
+        return damage;
+    }
 
     public void receiveDamage(int dmg) {
         HP -= Math.max(0, dmg);

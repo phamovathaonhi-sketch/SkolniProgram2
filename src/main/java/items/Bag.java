@@ -33,5 +33,7 @@ public class Bag {
         return items.remove(it);
     }
 
-    public List<Item> all() { return List.copyOf(items); }
+    public List<Item> all() {
+        return List.copyOf(items);
+    }
 }

@@ -23,6 +23,9 @@ public class WorldLoader {
         player.setCurrentLocation(start);
     }
 
+    /**
+     * game beginning
+     */
     public void start() {
         Scanner sc = new Scanner(System.in);
 
@@ -57,6 +60,10 @@ public class WorldLoader {
         }
     }
 
+    /**
+     * this void method is used for orientating the time zone in the game
+     * @param costHours
+     */
     private void tickBefore(int costHours) {
         if (!state.isInPainting() || costHours <= 0) return;
         // If time will cross midnight, check daily rest penalty once
@@ -64,6 +71,10 @@ public class WorldLoader {
         if (futureHour >= 24) RuleEngine.onNewDayCheck(state);
     }
 
+    /**
+     *
+     * @param costHours
+     */
     private void tickAfter(int costHours) {
         if (costHours <= 0) return;
         state.advanceTime(costHours);
