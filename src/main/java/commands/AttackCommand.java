@@ -7,9 +7,9 @@ import game.RuleEngine;
 import locations.Location;
 
 public class AttackCommand implements Command {
-    private final Player player;
-    private final Location location;
-    private final GameState state;
+    private  Player player;
+    private  Location location;
+    private GameState state;
 
     public AttackCommand(Player player, Location location, GameState state) {
         this.player = player;

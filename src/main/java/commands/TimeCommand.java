@@ -3,7 +3,7 @@ package commands;
 import game.GameState;
 
 public class TimeCommand implements Command {
-    private final GameState state;
+    private  GameState state;
     public TimeCommand(GameState state) { this.state = state; }
 
     @Override public boolean execute() {

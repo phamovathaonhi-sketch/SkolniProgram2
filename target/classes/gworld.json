@@ -1,0 +1,248 @@
+{
+  "worldName": "The secret behind a haunted painting",
+  "startLocation": "Town",
+  "Instroduction": "You are now detective ALaric, who's meant to solve the truth behind Chais death.",
+  "locations": [
+    {
+      "name": "Town",
+      "theory": "The town is in Southest Asia, where people talk about Chais death.",
+      "NPC": [
+        {
+          "name": "villager",
+          "dialogue": [
+            "Chai have bought a diabolical painting from a shaman, then he died 3 days later. ",
+            "His house is nearby, maybe you can find something that could help you."
+          ],
+          "met": true
+        }
+      ],
+      "items": [],
+      "nextLocation": {
+        "FRONT": "Chai House"
+      }
+    },
+    {
+      "name": "Chai House",
+      "theory": "Mysterious house, full of aged items.",
+      "items": [
+        {
+          "name": "Painting",
+          "type": "Key",
+          "inStock": true,
+          "description": " Paintings gate guide ."
+        }
+      ],
+      "nextLocation": {
+        "FRONT": "Office"
+      }
+    },
+    {
+      "name": "Office",
+      "theory": "Office test centre, At this location you need to find 3 blood samples.",
+      "items": [
+        {
+          "name": "Old Case File",
+          "type": "Document",
+          "inStock": true,
+          "description": "Agus died 3 day after purchasing the same painting."
+        },
+        {
+          "name": "Ritual Notes",
+          "type": "Document",
+          "inStock": true,
+          "description": "Ritual demands blood from 3 different people with pure yin date."
+        }
+      ],
+      "requirements": [
+        "HAS:Painting"
+      ],
+      "nextLocation": {
+        "FRONT": "Seram Island"
+      }
+    },
+    {
+      "name": "Seram Island",
+      "theory": "Seram Island. You need to collect rooster blood and cinnabar.",
+      "enemy": [
+        {
+          "name": "rooster",
+          "HP": 30,
+          "damage": 3,
+          "isAlive": true,
+          "loot": {
+            "name": "Rooster Blood",
+            "type": "implements",
+            "description": "Rooster Blood use for ritual and needed situation.",
+            "inStock": true
+          }
+        }
+      ],
+      "items": [
+        {
+          "name": "Cinnabar",
+          "type": "implements",
+          "inStock": true,
+          "description": "Cinnabar desperate material for swrod and ritual."
+        }
+      ],
+      "requirements": [
+        "HAS:Ritual Notes"
+      ],
+      "nextLocation": {
+        "FRONT": "Laboratory"
+      }
+    },
+    {
+      "name": "Laboratory",
+      "theory": "Laboratory. Blood must be fresh within 24h (≤ 24h). You need to compile 3 different blood samples.",
+      "items": [
+        {
+          "name": "Pure Yin Blood A",
+          "type": "BloodSample",
+          "inStock": true,
+          "ageHours": 8,
+          "description": "Sample A (fresh)."
+        },
+        {
+          "name": "Pure Yin Blood B",
+          "type": "BloodSample",
+          "inStock": true,
+          "ageHours": 20,
+          "description": "Sample B (fresh)."
+        },
+        {
+          "name": "Pure Yin Blood C",
+          "type": "BloodSample",
+          "inStock": true,
+          "ageHours": 26,
+          "description": "Sample C (expired!)."
+        },
+        {
+          "name": "Pure Yin Blood C (fresh)",
+          "type": "BloodSample",
+          "inStock": true,
+          "ageHours": 6,
+          "description": "Sample C (fresh)."
+        }
+      ],
+      "requirements": [
+        "HAS:Cinnabar",
+        "HAS:Rooster Blood"
+      ],
+      "nextLocation": {
+        "FRONT": "Abandon Temple"
+      }
+    },
+    {
+      "name": "Abandon Temple",
+      "theory": "Abandon temple. The ritual will be accomplish here. Therefore you need to take care of a haunted soul",
+      "NPC": [
+        {
+          "name": "adam",
+          "dialogue": [
+            "I am Adam, I am meant to search for useful information during that you will start the ritual.",
+            "Till you got all you need enter (ritual)."
+          ],
+          "met": true
+        }
+      ],
+      "enemy": [
+        {
+          "name": "Unsettle soul",
+          "HP": 60,
+          "damage": 7,
+          "isAlive": true,
+          "loot": {
+            "name": "Soul Trap",
+            "type": "Key",
+            "description": "Soul catcher.",
+            "inStock": true
+          }
+        }
+      ],
+      "requirements": [
+        "HAS:Pure Yin Blood A",
+        "HAS:Pure Yin Blood B",
+        "HAS:Pure Yin Blood C (fresh)"
+      ],
+      "nextLocation": {
+        "FRONT": "Painting Room"
+      }
+    },
+    {
+      "name": "Painting Room",
+      "theory": "Jsi uvnitř malby. Musíš přežít 3 dny a dodržovat pravidla.",
+      "items": [
+        {
+          "name": "Rule List",
+          "type": "Rules",
+          "inStock": true,
+          "description": "Rule: You need to use command (rest) every day. Otherwise -15 points."
+        },
+        {
+          "name": "Copper",
+          "type": "implements",
+          "inStock": true,
+          "description": "Copper for forge."
+        }
+      ],
+      "rules": [
+        {
+          "id": "REST_DAILY",
+          "type": "REST_DAILY",
+          "penaltyPoints": 15,
+          "text": "You need to use command REST every single day."
+        }
+      ],
+      "nextLocation": {
+        "FRONT": "Forge"
+      }
+    },
+    {
+      "name": "Forge",
+      "theory": "Forge. Craft a sword: cinnabar + roosters blood + bronze.",
+      "craftingRecipe": {
+        "requiredItems": [
+          "Cinnabar",
+          "Rooster Blood",
+          "Copper"
+        ],
+        "resultItem": {
+          "name": "Sword",
+          "type": "Weapon",
+          "damage": 25,
+          "description": "Magical sword",
+          "inStock": true
+        }
+      },
+      "requirements": [
+        "FLAG:IN_PAINTING"
+      ],
+      "nextLocation": {
+        "FRONT": "Wedding"
+      }
+    },
+    {
+      "name": "Wedding",
+      "theory": "Wedding. First of all you need to kill shaman, then kill the rooster between 19:00-21:00",
+      "enemy": [
+        {
+          "name": "Shaman",
+          "HP": 80,
+          "damage": 10,
+          "isAlive": true
+        },
+        {
+          "name": "Rooster",
+          "HP": 90,
+          "damage": 12,
+          "isAlive": true
+        }
+      ],
+      "requirements": [
+        "HAS:Sword",
+        "FLAG:IN_PAINTING"
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@ package commands;
 import locations.Location;
 
 public class LookCommand implements Command {
-    private final Location loc;
+    private  Location loc;
     public LookCommand(Location loc) { this.loc = loc; }
 
     @Override public boolean execute() {

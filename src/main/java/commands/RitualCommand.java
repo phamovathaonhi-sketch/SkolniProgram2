@@ -6,9 +6,9 @@ import locations.Location;
 import locations.World;
 
 public class RitualCommand implements Command {
-    private final Player player;
-    private final World world;
-    private final GameState state;
+    private  Player player;
+    private  World world;
+    private  GameState state;
 
     public RitualCommand(Player player, World world, GameState state) {
         this.player = player;

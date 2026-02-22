@@ -8,10 +8,10 @@ import locations.Location;
 import locations.World;
 
 public class MovementCommand implements Command {
-    private final Directions dir;
-    private final Player player;
-    private final World world;
-    private final GameState state;
+    private  Directions dir;
+    private Player player;
+    private World world;
+    private GameState state;
 
     public MovementCommand(Directions dir, Player player, World world, GameState state) {
         this.dir = dir;

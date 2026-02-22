@@ -11,6 +11,12 @@ public class Bag {
         this.maxSize = maxSize;
     }
 
+    /**
+     * Adding items
+     * @param item
+     * @return
+     */
+
     public boolean add(Item item) {
         if (item == null) return false;
         if (items.size() >= maxSize) return false;
@@ -18,6 +24,11 @@ public class Bag {
         return true;
     }
 
+    /**
+     * If bag has already have mentioned item
+     * @param name
+     * @return
+     */
     public boolean has(String name) { return get(name) != null; }
 
     public Item get(String name) {
@@ -27,12 +38,22 @@ public class Bag {
                 .orElse(null);
     }
 
+    /**
+     * removing item
+     * @param name
+     * @return
+     */
+
     public boolean remove(String name) {
         Item it = get(name);
         if (it == null) return false;
         return items.remove(it);
     }
 
+    /**
+     * check items
+     * @return
+     */
     public List<Item> all() {
         return List.copyOf(items);
     }

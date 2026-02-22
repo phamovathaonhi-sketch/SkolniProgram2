@@ -5,8 +5,8 @@ import items.Item;
 import locations.Location;
 
 public class CraftCommand implements Command {
-    private final Player player;
-    private final Location location;
+    private  Player player;
+    private  Location location;
 
     public CraftCommand(Player player, Location location) {
         this.player = player;

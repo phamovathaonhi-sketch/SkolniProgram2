@@ -9,7 +9,7 @@ public class GameState {
     public int points = 100;
 
     public boolean restedToday = false; // rule: must rest each day (in painting)
-    public final Set<String> flags = new HashSet<>();
+    public  Set<String> flags = new HashSet<>();
 
     public void setFlag(String flag) {
         flags.add(flag);

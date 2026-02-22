@@ -10,6 +10,10 @@ public class Enemy extends Character {
 
     public Enemy(String name) { super(name); }
 
+    /**
+     * receives damage made by player
+     * @param dmg
+     */
     @Override
     public void receiveDamage(int dmg) {
         super.receiveDamage(dmg);

@@ -1,5 +1,3 @@
-
-
 import characters.Player;
 import locations.WorldLoader;
 

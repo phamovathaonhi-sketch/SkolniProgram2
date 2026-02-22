@@ -9,8 +9,13 @@ import java.util.List;
 import java.util.Map;
 
 public class Location {
+
     public String name;
     public String theory;
+
+    public Location(Map<String, String> nextLocation) {
+        this.nextLocation = nextLocation;
+    }
 
     public List<Item> items = new ArrayList<>();
     public List<NPC> NPC = new ArrayList<>();

@@ -33,6 +33,12 @@ public class World {
         }
     }
 
+    /**
+     * search for location
+     * @param name
+     * @return
+     */
+
     public Location findLocation(String name) {
         if (name == null || locations == null) return null;
         return locations.stream()

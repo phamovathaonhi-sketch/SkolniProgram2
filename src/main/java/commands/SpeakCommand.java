@@ -3,7 +3,7 @@ package commands;
 import characters.NPC;
 
 public class SpeakCommand implements Command {
-    private final NPC npc;
+    private  NPC npc;
     public SpeakCommand(NPC npc) { this.npc = npc; }
 
     @Override public boolean execute() {

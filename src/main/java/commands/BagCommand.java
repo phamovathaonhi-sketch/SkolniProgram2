@@ -3,7 +3,7 @@ package commands;
 import characters.Player;
 
 public class BagCommand implements Command {
-    private final Player player;
+    private Player player;
     public BagCommand(Player player) { this.player = player; }
 
     @Override public boolean execute() {

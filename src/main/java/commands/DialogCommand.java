@@ -3,7 +3,7 @@ package commands;
 import characters.NPC;
 
 public class DialogCommand implements Command {
-    private final NPC npc;
+    private  NPC npc;
     public DialogCommand(NPC npc) { this.npc = npc; }
 
     @Override public boolean execute() {

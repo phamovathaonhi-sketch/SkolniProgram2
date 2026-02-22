@@ -5,9 +5,9 @@ import items.Item;
 import locations.Location;
 
 public class TakeCommand implements Command {
-    private final Player player;
-    private final Location location;
-    private final String itemName;
+    private  Player player;
+    private  Location location;
+    private  String itemName;
 
     public TakeCommand(Player player, Location location, String itemName) {
         this.player = player;

@@ -3,6 +3,11 @@ package game;
 import locations.Location;
 
 public class RuleEngine {
+    /**
+     *
+     * @param state
+     * @param loc
+     */
 
     public static void afterAction(GameState state, Location loc) {
         // Only enforce painting survival/rules inside painting world

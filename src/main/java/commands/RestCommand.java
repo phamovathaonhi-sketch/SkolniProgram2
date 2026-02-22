@@ -3,7 +3,7 @@ package commands;
 import game.GameState;
 
 public class RestCommand implements Command {
-    private final GameState state;
+    private  GameState state;
     public RestCommand(GameState state) {
         this.state = state;
     }

@@ -6,9 +6,9 @@ import locations.Location;
 import locations.World;
 
 public class GoCommand implements Command {
-    private final Player player;
-    private final World world;
-    private final Directions direction;
+    private  Player player;
+    private  World world;
+    private  Directions direction;
 
     public GoCommand(Player player, World world, Directions direction) {
         this.player = player;
