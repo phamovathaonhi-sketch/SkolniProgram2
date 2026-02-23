@@ -3,6 +3,9 @@ package game;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * used for orientating the time inside painting
+ */
 public class GameState {
     public int day = 0;
     public int hour = 0;
@@ -11,9 +14,6 @@ public class GameState {
     public boolean restedToday = false; // rule: must rest each day (in painting)
     public  Set<String> flags = new HashSet<>();
 
-    public void setFlag(String flag) {
-        flags.add(flag);
-    }
     public boolean hasFlag(String flag) {
         return flags.contains(flag);
     }
