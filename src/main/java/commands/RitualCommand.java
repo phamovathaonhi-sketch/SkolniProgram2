@@ -16,6 +16,11 @@ public class RitualCommand implements Command {
         this.state = state;
     }
 
+    /**
+     * execute the ritual
+     * @return
+     */
+
     @Override public boolean execute() {
         Location loc = player.getCurrentLocation();
         if (!"Abandon Temple".equalsIgnoreCase(loc.name)) {
@@ -28,7 +33,7 @@ public class RitualCommand implements Command {
             return false;
         }
 
-        // minimal ritual requirements (design core)
+
         String[] needed = {
                 "Painting",
                 "Cinnabar",

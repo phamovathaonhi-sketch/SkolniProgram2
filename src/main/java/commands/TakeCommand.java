@@ -27,7 +27,6 @@ public class TakeCommand implements Command {
             return false;
         }
 
-        // blood freshness rule (design: ≤24h)
         if ("BloodSample".equalsIgnoreCase(it.type) && !it.isFreshBlood()) {
             System.out.println("This blood sample is too old (>24h). You cannot take it.");
             return false;

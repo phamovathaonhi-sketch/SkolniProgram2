@@ -20,6 +20,9 @@ public class ChallengeCommand implements Command {
         this.enemy = enemy;
     }
 
+    /**
+     * player/enemy attacking
+     */
     private void attack() {
         if (player == null || enemy == null) {
             System.out.println("Challenge error: player or enemy missing.");

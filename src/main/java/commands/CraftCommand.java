@@ -32,7 +32,8 @@ public class CraftCommand implements Command {
             }
         }
 
-        for (String r : req) player.getBag().remove(r);
+        for (String r : req)
+            player.getBag().remove(r);
 
         Item result = location.craftingRecipe.resultItem;
         if (result == null) {

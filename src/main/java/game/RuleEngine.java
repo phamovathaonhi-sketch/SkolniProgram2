@@ -15,12 +15,12 @@ public class RuleEngine {
 
         // lose if points <= 0
         if (state.points <= 0) {
-            throw new GameOver("Došly ti body. Prohrál jsi.");
+            throw new GameOver("You have no more points left.");
         }
 
         // lose if you exceeded 3 days and still not finished
         if (state.day > 3) {
-            throw new GameOver("Nepřežil jsi 3 dny v malbě včas. Prohrál jsi.");
+            throw new GameOver("You did not survive 3 days.");
         }
     }
 

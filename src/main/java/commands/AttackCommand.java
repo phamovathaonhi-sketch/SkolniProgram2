@@ -31,10 +31,10 @@ public class AttackCommand implements Command {
                 return false;
             }
             if (state.hour < 19) {
-                throw new RuleEngine.GameOver("Zabil jsi (nebo ses pokusil zabít) kohouta před 19:00. Prohra.");
+                throw new RuleEngine.GameOver("You killed/ you tried to kill the rooster before 19:00. 'Game Over'");
             }
             if (state.hour >= 24) {
-                throw new RuleEngine.GameOver("Je po půlnoci. Prohra.");
+                throw new RuleEngine.GameOver("It is already too late. 'Game Over'");
             }
         }
 

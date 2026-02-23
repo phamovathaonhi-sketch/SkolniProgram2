@@ -4,8 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class GameState {
-    public int day = 0;            // 0 = real world, 1..3 = inside painting
-    public int hour = 0;           // 0..23
+    public int day = 0;
+    public int hour = 0;
     public int points = 100;
 
     public boolean restedToday = false; // rule: must rest each day (in painting)

@@ -6,6 +6,10 @@ public class BagCommand implements Command {
     private Player player;
     public BagCommand(Player player) { this.player = player; }
 
+    /**
+     * Bag using
+     * @return
+     */
     @Override public boolean execute() {
         var items = player.getBag().all();
         if (items.isEmpty()) {
