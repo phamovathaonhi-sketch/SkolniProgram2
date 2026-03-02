@@ -118,7 +118,7 @@
           "description": "Sample C (expired!)."
         },
         {
-          "name": "Pure Yin Blood C (fresh)",
+          "name": "Pure Yin Blood D (fresh)",
           "type": "BloodSample",
           "inStock": true,
           "ageHours": 6,
@@ -163,7 +163,8 @@
       "requirements": [
         "HAS:Pure Yin Blood A",
         "HAS:Pure Yin Blood B",
-        "HAS:Pure Yin Blood C (fresh)"
+        "HAS:Pure Yin Blood C",
+        "HAS:Pure Yin Blood D"
       ],
       "nextLocation": {
         "FRONT": "Painting Room"
